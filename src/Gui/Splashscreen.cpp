@@ -247,10 +247,11 @@ AboutDialog::AboutDialog(bool showLic, QWidget* parent)
     QPixmap image = getMainWindow()->splashImage();
 
     // Make sure the image is not too big
-    if (image.height() > rect.height()/2 || image.width() > rect.width()/2) {
+    int denom = 2;
+    if (image.height() > rect.height()/denom || image.width() > rect.width()/denom) {
         float scale = static_cast<float>(image.width()) / static_cast<float>(image.height());
-        int width = std::min(image.width(), rect.width()/2);
-        int height = std::min(image.height(), rect.height()/2);
+        int width = std::min(image.width(), rect.width()/denom);
+        int height = std::min(image.height(), rect.height()/denom);
         height = std::min(height, static_cast<int>(width / scale));
         width = static_cast<int>(scale * height);
 
@@ -275,11 +276,13 @@ AboutDialog::AboutDialog(bool showLic, QWidget* parent)
         ui->textBrowserLicense->setHtml(lictext);
 //    }
     ui->tabWidget->setCurrentIndex(0); // always start on the About tab
+
     setupLabels();
     showCredits();
     showLicenseInformation();
     showLibraryInformation();
     showCollectionInformation();
+    showOrHideImage(rect);
 }
 
 /**
@@ -458,6 +461,14 @@ static int getWordSizeOfOS()
 #endif
 }
 };
+
+void AboutDialog::showOrHideImage(const QRect& rect)
+{
+    adjustSize();
+    if (height() > rect.height()) {
+        ui->labelSplashPicture->hide();
+    }
+}
 
 void AboutDialog::setupLabels()
 {
