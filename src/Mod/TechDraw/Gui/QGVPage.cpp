@@ -746,7 +746,7 @@ void QGVPage::setRenderer(RendererType type)
 void QGVPage::setHighQualityAntialiasing(bool highQualityAntialiasing)
 {
 #ifndef QT_NO_OPENGL
-    setRenderHint(QPainter::HighQualityAntialiasing, highQualityAntialiasing);
+    setRenderHint(QPainter::Antialiasing, highQualityAntialiasing);
 #else
     Q_UNUSED(highQualityAntialiasing);
 #endif
@@ -1027,11 +1027,7 @@ void QGVPage::wheelEvent(QWheelEvent *event)
     }
 
     QPointF center = mapToScene(viewport()->rect().center());
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
     int delta = event->angleDelta().y();
-#else
-    int delta = event->delta();
-#endif
     qreal factor = std::pow(mouseBase, delta / mouseAdjust);
     scale(factor, factor);
 
