@@ -843,7 +843,7 @@
     </message>
     <message>
         <location filename="../../Command.cpp" line="1388"/>
-        <location filename="../../MDIViewPage.cpp" line="873"/>
+        <location filename="../../MDIViewPage.cpp" line="878"/>
         <source>Save page to dxf</source>
         <translation type="unfinished"></translation>
     </message>
@@ -901,13 +901,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../TaskCenterLine.cpp" line="346"/>
+        <location filename="../../TaskCenterLine.cpp" line="327"/>
         <source>Create CenterLine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../TaskCenterLine.cpp" line="391"/>
-        <source>Edit CenterLine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1737,28 +1732,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="635"/>
+        <location filename="../../MDIViewPage.cpp" line="636"/>
         <source>PDF (*.pdf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="636"/>
-        <location filename="../../MDIViewPage.cpp" line="832"/>
+        <location filename="../../MDIViewPage.cpp" line="637"/>
+        <location filename="../../MDIViewPage.cpp" line="837"/>
         <source>All Files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="637"/>
+        <location filename="../../MDIViewPage.cpp" line="638"/>
         <source>Export Page As PDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="831"/>
+        <location filename="../../MDIViewPage.cpp" line="836"/>
         <source>SVG (*.svg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="833"/>
+        <location filename="../../MDIViewPage.cpp" line="838"/>
         <source>Export page as SVG</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1821,12 +1816,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../TaskCenterLine.cpp" line="177"/>
+        <location filename="../../TaskCenterLine.cpp" line="196"/>
         <source>Create Center Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../TaskCenterLine.cpp" line="217"/>
+        <location filename="../../TaskCenterLine.cpp" line="226"/>
         <source>Edit Center Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3380,74 +3375,74 @@ Fast, but result is a collection of short straight lines.</source>
 <context>
     <name>TechDrawGui::MDIViewPage</name>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="141"/>
+        <location filename="../../MDIViewPage.cpp" line="142"/>
         <source>&amp;Export SVG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="135"/>
+        <location filename="../../MDIViewPage.cpp" line="136"/>
         <source>Toggle &amp;Keep Updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="138"/>
+        <location filename="../../MDIViewPage.cpp" line="139"/>
         <source>Toggle &amp;Frames</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="144"/>
+        <location filename="../../MDIViewPage.cpp" line="145"/>
         <source>Export DXF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="147"/>
+        <location filename="../../MDIViewPage.cpp" line="148"/>
         <source>Export PDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="729"/>
+        <location filename="../../MDIViewPage.cpp" line="730"/>
         <source>Different orientation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="730"/>
+        <location filename="../../MDIViewPage.cpp" line="731"/>
         <source>The printer uses a different orientation  than the drawing.
 Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="737"/>
+        <location filename="../../MDIViewPage.cpp" line="738"/>
         <source>Different paper size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="738"/>
+        <location filename="../../MDIViewPage.cpp" line="739"/>
         <source>The printer uses a different paper size than the drawing.
 Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="749"/>
+        <location filename="../../MDIViewPage.cpp" line="750"/>
         <source>Opening file failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="750"/>
+        <location filename="../../MDIViewPage.cpp" line="751"/>
         <source>Can not open file %1 for writing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="857"/>
+        <location filename="../../MDIViewPage.cpp" line="862"/>
         <source>Save Dxf File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="859"/>
+        <location filename="../../MDIViewPage.cpp" line="864"/>
         <source>Dxf (*.dxf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../MDIViewPage.cpp" line="1344"/>
+        <location filename="../../MDIViewPage.cpp" line="1349"/>
         <source>Selected:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3731,17 +3726,6 @@ Do you want to continue?</source>
     <message>
         <location filename="../../TaskCenterLine.ui" line="327"/>
         <source>Continuous</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../TaskCenterLine.ui" line="380"/>
-        <source>Flips endpoints of selected lines for centerline creation,
-see the FreeCAD Wiki &apos;2LineCenterLine&apos; for a description</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../TaskCenterLine.ui" line="384"/>
-        <source>Flip Ends</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

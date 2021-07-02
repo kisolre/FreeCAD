@@ -258,7 +258,7 @@ class SetAutoGroup(gui_base.GuiCommandSimplest):
         s = Gui.Selection.getSelection()
         if len(s) == 1:
             if (utils.get_type(s[0]) == "Layer") or \
--               (App.ParamGet("User parameter:BaseApp/Preferences/Mod/BIM").GetBool("AutogroupAddGroups", False)
+                (App.ParamGet("User parameter:BaseApp/Preferences/Mod/Draft").GetBool("AutogroupAddGroups", False)
              and (s[0].isDerivedFrom("App::DocumentObjectGroup")
                   or utils.get_type(s[0]) in ["Site", "Building",
                                               "Floor", "BuildingPart"])):
@@ -269,7 +269,7 @@ class SetAutoGroup(gui_base.GuiCommandSimplest):
         # including the options "None" and "Add new layer".
         self.groups = ["None"]
         gn = [o.Name for o in self.doc.Objects if utils.get_type(o) == "Layer"]
-        if App.ParamGet("User parameter:BaseApp/Preferences/Mod/BIM").GetBool("AutogroupAddGroups", False):
+        if App.ParamGet("User parameter:BaseApp/Preferences/Mod/Draft").GetBool("AutogroupAddGroups", False):
             gn.extend(groups.get_group_names())
         if gn:
             self.groups.extend(gn)
@@ -355,10 +355,10 @@ class AddToConstruction(gui_base.GuiCommandSimplest):
         col = (float(col[0]), float(col[1]), float(col[2]), 0.0)
 
         # Get the construction group or create it if it doesn't exist
-        gname = utils.get_param("constructiongroupname", "Construction")
-        grp = self.doc.getObject(gname)
+        grp = self.doc.getObject("Draft_Construction")
         if not grp:
-            grp = self.doc.addObject("App::DocumentObjectGroup", gname)
+            grp = self.doc.addObject("App::DocumentObjectGroup", "Draft_Construction")
+            grp.Label = utils.get_param("constructiongroupname", "Construction")
 
         for obj in Gui.Selection.getSelection():
             grp.addObject(obj)

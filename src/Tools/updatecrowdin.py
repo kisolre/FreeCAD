@@ -24,12 +24,14 @@
 # ***************************************************************************
 
 """
-This utility offers several commands to interact with the FreeCAD project on crowdin.
-For it to work, you need a ~/.crowdin-freecad-token file in your user's folder, that contains
-the API access token that gives access to the crowdin FreeCAD project.
-The API token can also be specified in the CROWDIN_TOKEN environment variable.
+This utility offers several commands to interact with the FreeCAD project on
+crowdin. For it to work, you need a ~/.crowdin-freecad-token file in your
+user's folder, that contains the API access token that gives access to the
+crowdin FreeCAD project. The API token can also be specified in the
+CROWDIN_TOKEN environment variable.
 
-The CROWDIN_PROJECT_ID environment variable can be used to use this script in other projects.
+The CROWDIN_PROJECT_ID environment variable can be used to use this script
+in other projects.
 
 Usage:
 
@@ -37,11 +39,19 @@ Usage:
 
 Available commands:
 
+    gather:              update all ts files found in the source code
+                         (runs updatets.py)
     status:              prints a status of the translations
-    update:              updates crowdin the current version of .ts files found in the source code
-    build:               builds a new downloadable package on crowdin with all translated strings
-    download [build_id]: downloads build specified by 'build_id' or latest if build_id is left blank
-    apply:               applies downloaded translations to source code (runs updatefromcrowdin.py)
+    update / upload:     updates crowdin the current version of .ts files
+                         found in the source code
+    build:               builds a new downloadable package on crowdin with all
+                         translated strings
+    build-status:        shows the status of the current builds available on
+                         crowdin
+    download [build_id]: downloads build specified by 'build_id' or latest if
+                         build_id is left blank
+    apply / install:     applies downloaded translations to source code
+                         (runs updatefromcrowdin.py)
 
 Example:
 
@@ -243,7 +253,7 @@ if __name__ == "__main__":
                     print(f"  id: {item['id']} progress: {item['progress']}% status: {item['status']}")
                 print('please specify a build id')
 
-    elif command == "update":
+    elif command in ["update","upload"]:
         # Find all ts files. However, this contains the lang-specific files too. Let's drop those
         all_ts_files = glob.glob('../**/*.ts', recursive=True)
         # Remove the file extensions
@@ -252,14 +262,18 @@ if __name__ == "__main__":
         main_ts_files = list(filter(lambda f: not [a for a in ts_files_wo_ext if a in f and f != a], ts_files_wo_ext))
         # Create tuples to map Crowdin name with local path name
         names_and_path = [(f'{basename(f)}.ts', f'{f}.ts') for f in main_ts_files]
-        # Accomodate for legacy naming
+        # Accommodate for legacy naming
         ts_files = [TsFile(LEGACY_NAMING_MAP[a] if a in LEGACY_NAMING_MAP else a, b) for (a, b) in names_and_path]
 
         updater.update(ts_files)
 
-    elif command == "apply":
+    elif command in ["apply","install"]:
         import updatefromcrowdin
         updatefromcrowdin.run()
+
+    elif command == "gather":
+        import updatets
+        updatets.main()
 
     else:
         print(__doc__)
